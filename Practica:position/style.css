@@ -1,0 +1,156 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none white 0.1px;
+}
+:root {
+  --bgcextremes: rgb(38, 38, 58);
+  --ctextremes: rgba(255, 255, 255, 0.788);
+  --ctmain: black;
+  --bgcmain: rgb(194, 191, 191);
+  --bgcsection: rgb(183, 172, 172);
+  --ctaside: rgba(128, 128, 128, 0.873);
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  color: var(--ctmain);
+}
+/*intente hacer el header sin tranparencia con opacity uno, pero no me funciono*/
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 60px;
+  background-color: var(--bgcextremes);
+  color: var(--ctextremes);
+  opacity: 1;
+}
+
+/*como verás a lo largo de este codigo, la unica opcion que encontre para centrar (horizontalmente) el contenido en los elementos fue mezclar el position: relative, con width: fit-content; and margin: auto; */
+header > h1 {
+  width: fit-content;
+  padding: 10px;
+  margin: auto;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: lighter;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-color: var(--bgcmain);
+}
+.content {
+  position: relative;
+  width: 70%;
+  height: 100%;
+}
+.sidebar {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+.content > h2 {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+  top: 30%;
+}
+
+.content > p {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+  top: 40%;
+}
+
+/* En lo que respecta a los elementos button y span, no logré centrarlos con la mezcla descrita anteriormente, por lo que tuve que agregar left, funciono pero me imagino que no es una buena practica, sobretodo es poco eficiente*/
+
+.content > button {
+  position: absolute;
+  top: 60%;
+  left: 43%;
+}
+
+/*para posicionar mejor estos elementos, los agrupe agregando un div en el html, funcionó pero me imagino que no es una buena practica, sobretodo es poco eficiente*/
+.content-sidebar {
+  position: relative;
+  width: fit-content;
+  height: 70%;
+  padding: 30px;
+  margin: auto;
+  background-color: var(--bgcsection);
+  top: 20%;
+  border-radius: 5%;
+  color: var(--ctaside);
+}
+ul > li {
+  position: relative;
+  list-style-type: none;
+  width: fit-content;
+  margin: auto;
+  padding: 15px;
+}
+
+.features {
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background-color: var(--bgcsection);
+}
+
+.features > h2 {
+  width: fit-content;
+  margin: auto;
+  padding-bottom: 5px;
+}
+
+.feature > span {
+  position: relative;
+  left: 50%;
+}
+
+.feature > p {
+  padding: 3px;
+  width: fit-content;
+  margin: auto;
+}
+
+.feature > button {
+  position: relative;
+  left: 47%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: var(--bgcextremes);
+}
+
+footer > p {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+  top: 40%;
+  color: var(--ctextremes);
+}
+button {
+  background-color: var(--bgcextremes);
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+  color: var(--ctextremes);
+}
